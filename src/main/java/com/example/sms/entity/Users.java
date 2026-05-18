@@ -16,10 +16,14 @@ public class Users {
 
     private String firstName;
     private String lastName;
+
+    @Column(unique = true)
+    private String username;
     @Column(unique = true)
     private String email;
+
     private String password;
-    private boolean isActive;
+    private boolean isActive=true; //added default value for isActive
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 }
