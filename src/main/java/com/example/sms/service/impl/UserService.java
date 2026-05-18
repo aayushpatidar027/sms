@@ -50,7 +50,7 @@ public class UserService implements IUserService {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("User not found with id: " + id));
 
-        log.info("User found: {}", user);
+
 
 //        if(!user.isActive()) {
 //            throw new NotFoundException("User with id " + id + " is inactive");
