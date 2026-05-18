@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,6 +23,7 @@ public class Users {
     private String email;
 
     private String password;
+    @Column(columnDefinition = "boolean default true") //added default value for isActive
     private boolean isActive=true; //added default value for isActive
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
