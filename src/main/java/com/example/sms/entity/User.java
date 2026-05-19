@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,10 +22,16 @@ public class User {
     private String username;
     @Column(unique = true)
     private String email;
-
     private String password;
+
+    private String phoneNumber; //added latest field for phone number
+
     @Column(columnDefinition = "boolean default true") //added default value for isActive
     private boolean isActive=true; //added default value for isActive
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Address> address;
+
 }

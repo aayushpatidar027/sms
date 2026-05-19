@@ -1,7 +1,7 @@
 package com.example.sms.controller;
 
 import com.example.sms.dto.UserDTO;
-import com.example.sms.entity.User;
+
 import com.example.sms.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +32,17 @@ public List<UserDTO> getAllUsers() {
     @PostMapping("/create")
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
 
+//       try{
+//           UserDTO createdUser = userService.createUser(userDTO);
+//           return ResponseEntity.ok(createdUser);
+//       }catch(Exception e){
+//           e.printStackTrace();
+//
+//       }
+//       return null;
+
         UserDTO createdUser = userService.createUser(userDTO);
-        return ResponseEntity.ok(createdUser);
+         return ResponseEntity.ok(createdUser);
     }
 
     @PutMapping("/update/{id}")
