@@ -1,6 +1,7 @@
 package com.example.sms.mapper;
 
 import com.example.sms.dto.AddressDTO;
+import com.example.sms.dto.ContactDTO;
 import com.example.sms.dto.UserDTO;
 import com.example.sms.entity.Address;
 import com.example.sms.entity.User;
@@ -42,6 +43,20 @@ public class UserMapper {
             });
         }
         userDTO.setAddress(addressDTOList);
+
+
+        List<String> conList=new ArrayList<>();
+        if(user.getContact()!=null)
+        {
+            user.getContact().forEach(contact->{
+               StringBuilder s=new StringBuilder();
+               s.append(contact.getFirstName()+" = ");
+                s.append(contact.getPhoneNumber());
+                conList.add(s.toString());
+            });
+        }
+        userDTO.setContact(conList);
+
         return userDTO;
     }
 
