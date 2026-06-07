@@ -21,6 +21,6 @@ public class UserDTO {
 
     private List<AddressDTO> address;
 
-    private List<ContactDTO> contact;
+    private List<String> contact;
 
 }
