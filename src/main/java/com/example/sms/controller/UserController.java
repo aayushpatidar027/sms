@@ -19,7 +19,7 @@ public class UserController {
     IUserService userService;
 
     @GetMapping("/getAll")
-public List<UserDTO> getAllUsers() {
+    public List<UserDTO> getAllUsers() {
     return userService.getAllUsers();
     }
 
