@@ -95,7 +95,6 @@ public class UserService implements IUserService {
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
-        user.setActive(userDTO.isActive());
         user.setUpdateAt(LocalDateTime.now());
         User updatedUser = userRepository.save(user);
         return userMapper.toDTO(updatedUser);
